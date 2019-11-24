@@ -1,0 +1,33 @@
+.main-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-main-card {
+    height: 700px;
+    width: 100%
+}
+
+.details-section {
+    width: 35%;
+    height: 100%;
+    background-color: #100e3b;
+}
+
+.cities-section {
+    width: 65%;
+    height: 100%;
+    background: #f2fbff;
+}
+
+.card-body {
+     padding: 0px;
+     display: flex;
+}
+
+.st-title-forcast {
+    margin: 20px;
+    margin-top: 40px;
+}

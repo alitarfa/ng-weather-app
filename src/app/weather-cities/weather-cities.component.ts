@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionHandlerService } from '../services/action-handler.service';
 
 @Component({
   selector: 'app-weather-cities',
@@ -9,8 +10,8 @@ export class WeatherCitiesComponent implements OnInit {
 
   listCities = new Array();
 
-  constructor() { 
-    
+  constructor(private actionHandler: ActionHandlerService) { 
+
     this.listCities.push(
       {id : 1,name : 'Algeria'},
       {id : 1,name : 'Algeria'},
@@ -18,6 +19,10 @@ export class WeatherCitiesComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  openModel = () => {
+    this.actionHandler.openModel();
   }
 
 

@@ -3,13 +3,14 @@
 
         <app-card-city *ngFor="let city of listCities"></app-card-city>
 
-        <mdb-card class="st-card">
+        <mdb-card class="st-card" (click)="openModel()">
                 <!--Card image-->
             <div class="st-content-card">
                 <img class="image-card" src="../../assets/plus.png" alt="">
             </div>
               
         </mdb-card>
-        
+
+        <app-add-city-model></app-add-city-model>
     </div>
 </div>

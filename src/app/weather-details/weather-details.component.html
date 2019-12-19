@@ -1,31 +1,38 @@
 <div class="container-fluid font-color-w center-v-h">
     <div class="row">
         <div class="col-12 center-v">
-            <img src="../../assets/008-storm.png" width="120" alt="">
+            <img src={{currnetImage}} width="120" alt="">
         </div>
     </div>
 
+    <div class="row">
+            <div class="col-12 center-v">
+                
+            </div>
+        </div>
+
     <div class="row temp-info">
-            <div class="col-12 temp-text">
-                18
+            <div class="col-12 temp-text" *ngIf="fetched">
+                {{math.round(weatherData.list[0].main.temp - 273.15)}}
             </div>
     </div>
 
     <div class="row city-name">
-            <div class="col-12 center-v">
-                Paris
+            <div class="col-12 center-v" *ngIf="fetched">
+                {{weatherData.city.name}}
             </div>
     </div>
 
     <div class="row sun-info">
-            <div class="col-6 center-v">
-               <span>Sun rise </span>
-               <span> 8:00</span>
+            <div class="col-6 center-v st-sunRise">
+                 <span *ngIf="fetched" >{{weatherData.city.sunrise | date : 'shortTime'}}</span>
+               <span class=""><img src="../../assets/sunrise.png" alt=""></span>
+              
             </div>
 
-            <div class="col-6 center-v">
-                <span>Sun rise </span>
-                <span> 8:00</span>
+            <div class="col-6 center-v st-sunSet">
+                <span class=""><img src="../../assets/sunset.png" alt=""></span>
+                <span *ngIf="fetched" >{{weatherData.city.sunset| date : 'shortTime'}}</span>
             </div>
     </div>
 </div> 

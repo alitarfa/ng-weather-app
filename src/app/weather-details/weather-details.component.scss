@@ -25,3 +25,25 @@
     margin-top: 40px;
 }
 
+.st-sunSet {
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span img {
+        margin-right: 6px;
+    }
+}
+
+.st-sunRise {
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span img {
+        margin-left: 6px;
+    }
+}
+

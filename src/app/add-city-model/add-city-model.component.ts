@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActionHandlerService } from '../services/action-handler.service';
+import { ModelHandlerService } from '../services/model-handler.service';
+import { WeatherAPIService } from '../services/weather-api.service';
 
 @Component({
   selector: 'app-add-city-model',
@@ -9,9 +11,9 @@ import { ActionHandlerService } from '../services/action-handler.service';
 export class AddCityModelComponent implements OnInit {
 
   private modelState = false;
-  @ViewChild('basicModal') myModel;
-  
-  constructor(private actionhandler: ActionHandlerService) {
+  @ViewChild('basicModal',{static: false}) myModel;
+
+  constructor(private actionhandler: ActionHandlerService, private modelHandler: ModelHandlerService, private web: WeatherAPIService ) {
     this.actionhandler.currentModelState.subscribe(res => {
       console.log(res);
       if(res) this.openModel();
@@ -29,4 +31,14 @@ export class AddCityModelComponent implements OnInit {
   closeModel = () => {
     console.log('ACTION::CLOSE_MODEL::COMPONENT');
   }
+
+  addCity = (cityName : string) => {
+    console.log('ACTION::ADD_CITY');
+    console.log('VALUE::'+cityName);
+    this.modelHandler.addCity(cityName);
+
+    // just for test 
+    this.web.fetchFiveDaysForcast('Paris');
+  }
+
 }

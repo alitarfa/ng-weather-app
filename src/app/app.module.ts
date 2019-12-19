@@ -6,13 +6,18 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { WeatherDetailsComponent } from './weather-details/weather-details.component';
 import { WeatherTableComponent } from './weather-table/weather-table.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AddCityComponent } from './add-city/add-city.component';
 import { AddCityModelComponent } from './add-city-model/add-city-model.component';
 import { WeatherCitiesComponent } from './weather-cities/weather-cities.component';
 import { CardCityComponent } from './card-city/card-city.component';
- 
+import { TableForcastComponent } from './table-forcast/table-forcast.component';
+import { WeatherAPIService } from './services/weather-api.service';
+
+
 
 @NgModule({
   declarations: [
@@ -23,14 +28,16 @@ import { CardCityComponent } from './card-city/card-city.component';
     AddCityComponent,
     AddCityModelComponent,
     WeatherCitiesComponent,
-    CardCityComponent
+    CardCityComponent,
+    TableForcastComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [WeatherAPIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

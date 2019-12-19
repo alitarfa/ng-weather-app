@@ -1,18 +1,24 @@
-<div mdbModal #basicModal="mdbModal" class="modal fade center" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+<div mdbModal #basicModal="mdbModal" class="modal fade center st-model" tabindex="-1" role="dialog"
+  aria-labelledby="myBasicModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title w-100" id="myModalLabel">Add City</h4>
       </div>
       <div class="modal-body">
-        ...
+        <div class="st-body-model">
+          <input #cityName class="" />
+          <i class="material-icons">
+              gps_fixed
+          </i>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>
+        <button type="button" class="btn btn-primary" aria-label="Close" (click)="basicModal.hide()">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addCity(cityName.value)">Add City</button>
       </div>
     </div>
   </div>

@@ -1,0 +1,20 @@
+.st-body-model {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+        margin: 8px;
+        cursor: pointer;
+    }
+}
+
+.st-model {
+    border-radius: 10px;
+}
+
+.modal-dialog .modal-content {
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+    border-radius: .9rem;
+    border: 0;
+}

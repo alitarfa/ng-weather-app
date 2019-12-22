@@ -9,15 +9,18 @@ import { WeatherAPIService } from '../services/weather-api.service';
 export class TableForcastComponent implements OnInit {
 
   private listFiveDays = [];
+  private timeStamp    = [];
+  private dayName      = [];
   private listIcon = [
     '../../assets/001-drop.png',
     '../../assets/004-clouds.png',
     '../../assets/010-wind-1.png',
     '../../assets/006-sun.png'
-  ]
+  ];
+
+  private date = new Date();
 
   constructor(private api : WeatherAPIService) { }
-
   ngOnInit() {
     this.getFiveDayForCast();
   }
@@ -33,13 +36,16 @@ export class TableForcastComponent implements OnInit {
             if(res['cod'] == '200') {
               for(var i = 0; i < 40 ; i=i+8) {
                 this.listFiveDays.push(res.list[i]);
+                console.log(res.list[i].dt);
+                this.timeStamp.push(res.list[i].dt);
               }
             }
+
+            console.log(this.listFiveDays);
           }
          
         });
       }
-     
     });
   }
 

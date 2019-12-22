@@ -4,7 +4,7 @@
       <tbody>
         <tr mdbTableCol *ngFor="let day of listFiveDays">
           <td>
-            day
+              {{day.dt|date: 'EE'}}
           </td>
           <td>
             <div class="st-content-5">

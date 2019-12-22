@@ -19,7 +19,7 @@ export class WeatherDetailsComponent implements OnInit {
   constructor(private api: WeatherAPIService) {}
 
   ngOnInit() {
-    this.api.getDataWeather().subscribe(res => {
+    this.api.getDataWeather().subscribe( (res: any) => {
       if (res["cod"] == "200") {
         this.fetched = true;
         this.weatherData = res;

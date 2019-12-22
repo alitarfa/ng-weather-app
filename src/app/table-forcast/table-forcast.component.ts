@@ -30,7 +30,7 @@ export class TableForcastComponent implements OnInit {
       if(state) {
         console.log('state '+ state);
         this.listFiveDays = [];
-        this.api.getDataWeather().subscribe(res => {
+        this.api.getDataWeather().subscribe((res: any) => {
           if(state) {
             this.listFiveDays = [];
             if(res['cod'] == '200') {

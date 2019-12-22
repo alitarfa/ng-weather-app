@@ -29,7 +29,7 @@ export class WeatherCitiesComponent implements OnInit {
   selectCity = (name: string) => {
     console.log('ACTION::ON_CARD::CLICK::'+name);
     this.api.fetchFiveDaysForcast(name);
-
+    this.api.clickeSub.next(true);
   };
 
   

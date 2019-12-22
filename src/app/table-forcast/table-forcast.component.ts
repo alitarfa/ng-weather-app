@@ -23,14 +23,24 @@ export class TableForcastComponent implements OnInit {
   }
 
   private getFiveDayForCast() {
-    this.api.getDataWeather().subscribe(res => {
-      if(res['cod'] == '200') {
-        for(var i = 0; i < 40 ; i=i+8) {
-          this.listFiveDays.push(res.list[i]);
-        }
+    this.api.getStateClick().subscribe(state => {
+      if(state) {
+        console.log('state '+ state);
+        this.listFiveDays = [];
+        this.api.getDataWeather().subscribe(res => {
+          if(state) {
+            this.listFiveDays = [];
+            if(res['cod'] == '200') {
+              for(var i = 0; i < 40 ; i=i+8) {
+                this.listFiveDays.push(res.list[i]);
+              }
+            }
+          }
+         
+        });
       }
+     
     });
-   
   }
 
 }

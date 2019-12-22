@@ -10,15 +10,19 @@
       </div>
       <div class="modal-body">
         <div class="st-body-model">
-          <input #cityName class="" />
+          <div class="md-form">
+            <input #cityName mdbInput type="text" id="form1" class="form-control">
+            <label for="form1" class="">City Name</label>
+          </div>
           <i class="material-icons">
-              gps_fixed
+            gps_fixed
           </i>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" aria-label="Close" (click)="basicModal.hide()">Close</button>
-        <button type="button" class="btn btn-primary" (click)="addCity(cityName.value)">Add City</button>
+        <button mdbBtn type="button" color="indigo" aria-label="Close" (click)="basicModal.hide()"
+          mdbWavesEffect>Close</button>
+        <button mdbBtn type="button" color="indigo" (click)="addCity(cityName.value)" mdbWavesEffect>Add City</button>
       </div>
     </div>
   </div>

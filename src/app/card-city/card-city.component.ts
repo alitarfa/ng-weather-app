@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-card-city',
@@ -7,17 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardCityComponent implements OnInit {
 
+  @Input() name : string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  selectedCity = ()=> {
-    console.log('SELECTED_CITY::ACTION::CLICK');
-    // call  the remote API 
-
-    // the second section will be notifed because is already subscribed to the stream  
-
-
-  }
 }

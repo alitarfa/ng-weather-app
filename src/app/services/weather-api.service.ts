@@ -12,7 +12,6 @@ export class WeatherAPIService {
   private weatherDataObject = {};
   
   constructor(private api: HttpClient) {
-
   }
 
   fetchFiveDaysForcast (payload){
@@ -31,4 +30,5 @@ export class WeatherAPIService {
   getDataWeather() {
     return this.subjectBeh.asObservable();
   }
+
 }

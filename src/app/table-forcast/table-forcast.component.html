@@ -1,22 +1,31 @@
-<div class="row">
-    <div class="col-12">
-            <table mdbTable hover="true">
-                    <tbody>
-                      <tr mdbTableCol *ngFor="let day of listFiveDays">
-                        <td>
-                            
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                      </tr>
-                    </tbody>
-            </table>
-    </div>
+<div class="row st-table-content">
+  <div class="col-12">
+    <table mdbTable hover="true">
+      <tbody>
+        <tr mdbTableCol *ngFor="let day of listFiveDays">
+          <td>
+            day
+          </td>
+          <td>
+            <div class="st-content-5">
+              <img src={{listIcon[0]}} alt="">
+              <label>{{day.main.humidity}} %</label>
+            </div>
+          </td>
+          <td>
+            <div class="st-content-5">
+              <img src={{listIcon[2]}} alt="">
+              <label>{{day.wind.speed}} Km/h</label>
+            </div>
+          </td>
+          <td>
+            <div class="st-content-5">
+              <img src={{listIcon[1]}} alt="">
+              <label>{{day.clouds.all}} %</label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

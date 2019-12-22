@@ -19,11 +19,10 @@ export class ModelHandlerService {
 
   addCity = (city : string)=> {
     console.log('ACTION::ADDING_TO_LIST_CITIES');
-    this.listCities.push(city);
+    this.listCities.push({name: city});
   }
 
   deleteCity = ()=> {
-
   }
 
   getListCities = ()=> {

@@ -16,7 +16,11 @@ import { WeatherCitiesComponent } from './weather-cities/weather-cities.componen
 import { CardCityComponent } from './card-city/card-city.component';
 import { TableForcastComponent } from './table-forcast/table-forcast.component';
 import { WeatherAPIService } from './services/weather-api.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatButtonModule} from '@angular/material/button';
+import { NotifierModule } from "angular-notifier";
+ 
 
 
 @NgModule({
@@ -36,6 +40,12 @@ import { WeatherAPIService } from './services/weather-api.service';
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    NotifierModule.withConfig({
+    
+  })
   ],
   providers: [WeatherAPIService],
   bootstrap: [AppComponent]

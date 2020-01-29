@@ -22,7 +22,7 @@ export class WeatherAPIService {
   }
 
   urlBuilder = (payload) => {
-    return "http://api.openweathermap.org/data/2.5/forecast?q="+payload+"&appid=0ada432b59deb9716c357092c5f79be6";
+    return "https://api.openweathermap.org/data/2.5/forecast?q="+payload+"&appid=0ada432b59deb9716c357092c5f79be6";
   }
 
 
